@@ -1,0 +1,23 @@
+{
+  "training_loo": {
+    "correct_outputs": 118,
+    "total_outputs": 3232,
+    "accuracy": 0.03650990099009901
+  },
+  "training_test_outputs": {
+    "correct_outputs": 43,
+    "total_outputs": 1076,
+    "accuracy": 0.039962825278810406,
+    "fully_correct_tasks": 34,
+    "total_tasks": 1000
+  },
+  "evaluation_test_outputs": {
+    "correct_outputs": 0,
+    "total_outputs": 172,
+    "accuracy": 0.0,
+    "fully_correct_tasks": 0,
+    "total_tasks": 120
+  },
+  "solver_sha256": "a12ada95b5c9173ed655b817b48d3da7b73c5dd49649e95dc8b3b9496349dfc4",
+  "seconds": 51.1987315
+}
