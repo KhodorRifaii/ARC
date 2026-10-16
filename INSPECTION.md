@@ -45,7 +45,7 @@ Seven regression tests cover candidate consistency, joint color inference, stabl
 - When no program fits, guesses still copy demonstration outputs. This is explicitly a weak fallback, not successful inference.
 - Object extraction uses same-color components and can miss multicolor objects. Fixed crops can overfit demonstration positions.
 - Existing shape-safe operations can still be semantically wrong on novel inputs. Passing format validation says nothing about correctness of those predictions.
-- No actual Kaggle run, hidden leaderboard evaluation, competition submission, or rule-eligibility audit was performed.
+- Kaggle Version 1 subsequently completed successfully in 29.4 seconds with Internet off; see `outputs/kaggle_run.json`. No hidden leaderboard evaluation, competition submission, or rule-eligibility audit was performed.
 - The inspection and regression suite are finite; they do not establish absence of every possible defect.
 
 The next substantive research step is a richer object/program search with a development split fixed before tuning and a fresh independent benchmark for final validation. Adding more operations must be justified by measured generalization, not by copying known answers.

@@ -25,4 +25,4 @@ The solver reads demonstrations and test inputs only. Only the local scorer read
 
 ## Kaggle artifact
 
-`notebooks/arc_submission.ipynb` embeds the solver and validator and writes `/kaggle/working/submission.json`. Attach competition data and disable Internet. It requires no package downloads. The notebook has been checked locally using adapted paths; it has not been executed or submitted on Kaggle. Rebuild its embedded source if the solver changes.
+`notebooks/arc_submission.ipynb` embeds the solver and validator and writes `/kaggle/working/submission.json`. Attach competition data and disable Internet. It requires no package downloads. Kaggle Version 1 completed successfully in 29.4 seconds on CPU with Internet off and validated all 240 tasks / 259 test outputs / 518 attempts. `submission.json` is saved in its output. It has not been submitted to the competition. See `outputs/kaggle_run.json` for the version URL. Rebuild its embedded source if the solver changes.

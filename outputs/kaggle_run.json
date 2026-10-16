@@ -1,0 +1,15 @@
+{
+  "notebook_url": "https://www.kaggle.com/code/khodorrifai/arc-inspected-symbolic-baseline?scriptVersionId=359070999",
+  "version": 1,
+  "status": "successful",
+  "runtime_seconds": 29.4,
+  "accelerator": "None (CPU)",
+  "internet": false,
+  "validation": {
+    "tasks": 240,
+    "test_outputs": 259,
+    "attempts": 518
+  },
+  "output_file": "submission.json",
+  "competition_submitted": false
+}
