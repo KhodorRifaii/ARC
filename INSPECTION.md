@@ -49,3 +49,13 @@ Seven regression tests cover candidate consistency, joint color inference, stabl
 - The inspection and regression suite are finite; they do not establish absence of every possible defect.
 
 The next substantive research step is a richer object/program search with a development split fixed before tuning and a fresh independent benchmark for final validation. Adding more operations must be justified by measured generalization, not by copying known answers.
+
+## Follow-up code review
+
+Removed the unused first-demonstration color-map implementation: inference discarded it and used the correct joint mapping implementation instead. Removed blanket exception swallowing in box-fill candidate search so unexpected defects surface during evaluation. Fixed the public prediction API to reject attempt counts other than two. Added a reproducible notebook build script and a regression test that compares its embedded modules to current source. Strengthened the invalid scaling/tiling regression with explicit rejection checks.
+
+Nine regression tests pass. All 259 downloadable test predictions remain identical to the previous artifact. These are maintenance changes, not new reasoning capabilities. The deployed Kaggle Version 1 still contains the prior source; it has not been replaced by this review.
+
+Remaining priorities: broader program composition and multicolor object reasoning; evidence-based candidate ranking; replacing copied-output fallback guesses; a genuinely reserved benchmark before further tuning; and explicit validation of malformed challenge inputs. Those are not solved by notebook format compliance.
+
+The follow-up full scoring run completed in 50.96 seconds: training LOO 118/3,232, training test outputs 43/1,076, and evaluation 0/172, unchanged. Its source hash is recorded in `outputs/metrics.json`.

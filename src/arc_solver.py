@@ -109,15 +109,6 @@ def candidates(inp, out):
     # Eight dihedral symmetries.
     for i,x in enumerate(transforms(inp)):
       if x==out: ps.append(('geom',i))
-    # Per-color map, constrained by all pixels.
-    if (ih,iw)==(oh,ow):
-      m={}; rev={}; ok=True
-      for arow,brow in zip(inp,out):
-        for a,b in zip(arow,brow):
-          if (a in m and m[a]!=b) or (b in rev and rev[b]!=a): ok=False; break
-          m[a]=b; rev[b]=a
-        if not ok: break
-      if ok and m!={c:c for c in m}: ps.append(('color',m))
     if ih and iw and oh%ih==0 and ow%iw==0:
       ps.append(('scale',oh//ih,ow//iw))
       ps.append(('tile',oh//ih,ow//iw))
@@ -132,9 +123,7 @@ def candidates(inp, out):
     for bg in colors:
       for fill in range(10):
         p=('fill_boxes',bg,fill)
-        try:
-          if apply(inp,p)==out: ps.append(p)
-        except Exception: pass
+        if apply(inp,p)==out: ps.append(p)
       for fg in colors-{bg}:
         p=('complete_lines',bg,fg)
         if apply(inp,p)==out: ps.append(p)
@@ -144,7 +133,6 @@ def candidates(inp, out):
 def infer(train):
     if not train: return []
     programs=candidates(train[0]['input'],train[0]['output'])
-    programs=[p for p in programs if p[0]!='color']
     bases=[('geom',i) for i in range(8)]
     for bg in ['mode']+list(range(10)):
         bases.append(('bbox',bg))
@@ -168,6 +156,8 @@ def infer(train):
 
 
 def predict_task(task, attempts=2):
+    if type(attempts) is not int or attempts != 2:
+        raise ValueError('ARC submissions require exactly two attempts')
     programs=infer(task.get('train',[])); result=[]
     for test in task.get('test',[]):
       preds=[]

@@ -11,5 +11,6 @@
     "attempts": 518
   },
   "output_file": "submission.json",
-  "competition_submitted": false
+  "competition_submitted": false,
+  "source_git_commit": "680b610"
 }
